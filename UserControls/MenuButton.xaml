@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Chat_App.UserControls.MenuButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d"
+             Name="menuButton"
+             d:DesignWidth="200">
+
+    <Grid Margin="0 -17">
+        <Grid HorizontalAlignment="Right"
+              Width="20"
+              Height="85"
+              Panel.ZIndex="1"
+              Visibility="{Binding ElementName=btn,Path=Tag}">
+
+            <Path Fill="#F8F7FC" Stretch="Fill"
+                Data="M0 20.7C15 20 26.5 12 27 0V87.6C26 75 15.1 67.5 0 67V24Z"/>
+        </Grid>
+        
+        <Button x:Name="btn" Style="{StaticResource menuButton}">
+            <StackPanel Orientation="Horizontal">
+                <icon:PackIconMaterial Kind="{Binding ElementName=menuButton,Path=Icon}"
+                                       Style="{StaticResource menuButtonIcon}" />
+                <TextBlock Text="{Binding ElementName=menuButton,Path=Title}"
+                           Style="{StaticResource menuButtonText}" />
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</UserControl>
